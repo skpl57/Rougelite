@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd5nt3drcu8nm"]
+
+[ext_resource type="Script" uid="uid://cwlt5ei33xsoq" path="res://skrypty/Inne/Particle.cs" id="1_wki48"]
+
+[sub_resource type="Curve" id="Curve_ywhxa"]
+_limits = [0.0, 1.1, 0.0, 1.0]
+_data = [Vector2(0, 1.1), 0.0, -0.597913, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_5oi5l"]
+offsets = PackedFloat32Array(0, 0.837398)
+colors = PackedColorArray(0.729412, 0.823529, 0, 1, 0.427451, 0.635294, 0, 1)
+
+[node name="Particle" type="CPUParticles2D"]
+rotation = -1.5708
+emitting = false
+amount = 40
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(-4, -4)
+spread = 180.0
+gravity = Vector2(5, 30)
+initial_velocity_min = 5.0
+initial_velocity_max = 15.0
+linear_accel_min = 30.0
+linear_accel_max = 30.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_ywhxa")
+color_ramp = SubResource("Gradient_5oi5l")
+script = ExtResource("1_wki48")
